@@ -18,4 +18,4 @@ delete:
 	rm db.sqlite3
 
 run:
-	python manage.py runserver 
+	python manage.py runserver
