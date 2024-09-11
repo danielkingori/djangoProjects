@@ -18,11 +18,15 @@ class UserManager(BaseUserManager):
         user.is_superuser = True
         user.save(using=self._db)
         
-    
-
 class User(AbstractUser):
     email = models.EmailField(unique=True, max_length=255)
     username = models.CharField(unique=False, max_length=15)
     objects = UserManager()
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
+    
+class Profile(models.Model):
+    pic = models.URLField() #object storagre eg aws
+    address = models.CharField(max_length=100)
+    country = models.CharField(max_length=50)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
