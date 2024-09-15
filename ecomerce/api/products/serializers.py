@@ -10,4 +10,4 @@ class ProductSerializer(ModelSerializer):
 #testing
 #auth & permissions
 #ordering & filtering
-#docs, pagination, cache, throtling
+#docs, pagination, cache, throtling, groups
