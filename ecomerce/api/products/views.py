@@ -8,6 +8,9 @@ class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all()
     permission_classes = [IsAuthenticated]
     
+    def perform_create(self, serializer):
+        serializer.save(created_by=self.request.user)
+    
     # """
     # {
     #     "Authorization":"Bearer  ddddddddddddd"
