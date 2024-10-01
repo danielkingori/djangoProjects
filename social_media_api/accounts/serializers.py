@@ -1,4 +1,4 @@
-from django.conf  import settings
+from django.conf import settings
 from rest_framework import serializers
 from rest_framework.authtoken.models import Token
 from django.contrib.auth import authenticate
